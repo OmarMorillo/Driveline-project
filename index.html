@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Baseball Swing Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <canvas id="threejs-canvas"></canvas>
+    </div>
+
+    <!-- Metrics Panel -->
+    <div id="metrics-panel">
+        <h3>Player Metrics</h3>
+        <div id="metrics-content"></div>
+    </div>
+    <!-- Computed Metrics Panel -->
+    <div id="computed-panel">
+        <h3>Computed Metrics</h3>
+        <div id="computed-content"></div>
+    </div>
+
+    <!-- Controls Panel -->
+    <div id="controls-panel">
+        <div id="playback-controls">
+            <button id="play-pause">Play</button>
+            <input type="range" id="scrubber" min="0" max="100" value="0">
+            <span id="frame-counter">Frame: 0 / 0</span>
+        </div>
+        <div id="speed-controls">
+            <label>Speed:</label>
+            <button class="speed-btn active" data-speed="0.15">0.15x</button>
+            <button class="speed-btn" data-speed="0.25">0.25x</button>
+            <button class="speed-btn" data-speed="0.5">0.5x</button>
+            <button class="speed-btn" data-speed="1">1x</button>
+        </div>
+        <div id="view-controls">
+            <button id="view-3q">3/4 View</button>
+            <button id="view-side">Side</button>
+            <button id="view-top">Top</button>
+            <button id="view-front">Front</button>
+            <button id="reset-camera">Reset</button>
+        </div>
+        <div id="animation-controls">
+            <label>
+                <input type="checkbox" id="loop-toggle" checked> Loop
+            </label>
+            <label>
+                <input type="checkbox" id="pause-contact-toggle"> Pause at Contact
+            </label>
+        </div>
+    </div>
+
+    <script src="js/parser.js"></script>
+    <script src="js/skeleton.js"></script>
+    <script src="js/bat.js"></script>
+    <script src="js/metrics.js"></script>
+    <script src="js/computed.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
